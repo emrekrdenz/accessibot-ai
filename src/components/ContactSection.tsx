@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, Phone, MapPin, ArrowRight, Shield } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowRight, MessageSquare, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -16,31 +16,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-24 bg-background">
       <div className="container">
-        {/* Urgency banner */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 mb-6 px-5 py-2.5 rounded-full bg-primary/5 border border-primary/15">
-            <Shield className="w-4 h-4 text-primary" />
-            <span className="text-sm font-semibold text-primary">EAA 2025 yürürlüğe giriyor — harekete geçme zamanı</span>
-          </div>
-
-          {/* Dual CTAs */}
-          <div className="flex flex-wrap justify-center gap-4 mb-4">
-            <Button size="lg" className="gradient-primary text-white border-0 hover:opacity-90 text-base px-8 h-12">
-              Ücretsiz Erişilebilirlik Analizi Yap
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="text-base px-8 h-12">
-              Demo Talep Et
-            </Button>
-          </div>
-          <div className="flex justify-center gap-8 text-xs text-muted-foreground">
-            <span>Kredi kartı gerektirmez</span>
-            <span>5 dakikada sonuç</span>
-          </div>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Info */}
           <div>
@@ -54,17 +31,36 @@ const ContactSection = () => {
               Web sitenizin erişilebilirlik durumunu öğrenmek ve size en uygun çözümü bulmak için bizimle iletişime geçin.
             </p>
 
-            <div className="space-y-4">
+            <div className="space-y-4 mb-8">
               {[
-                { icon: Mail, text: "info@ike.com" },
-                { icon: Phone, text: "+90 (212) 000 00 00" },
-                { icon: MapPin, text: "İstanbul, Türkiye" },
+                { icon: Mail, text: "info@ike.com.tr", label: "E-posta" },
+                { icon: Phone, text: "+90 (212) 000 00 00", label: "Telefon" },
+                { icon: MapPin, text: "İstanbul, Türkiye", label: "Lokasyon" },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-3">
-                  <item.icon className="w-5 h-5 text-primary" />
-                  <span className="text-muted-foreground">{item.text}</span>
+                  <div className="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground">{item.label}</div>
+                    <span className="text-foreground font-medium text-sm">{item.text}</span>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-muted/50 rounded-xl p-5 border">
+              <h4 className="font-semibold text-foreground text-sm mb-2">Hızlı Destek</h4>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <div className="flex items-center gap-1.5">
+                  <MessageSquare className="w-4 h-4 text-primary" />
+                  <span>Canlı Chat</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <Globe className="w-4 h-4 text-primary" />
+                  <span>Bilgi Bankası</span>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -86,9 +82,13 @@ const ContactSection = () => {
               <label htmlFor="message" className="text-sm font-medium text-foreground mb-1.5 block">Mesajınız</label>
               <Textarea id="message" rows={4} placeholder="Erişilebilirlik ihtiyaçlarınızı açıklayın..." required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} />
             </div>
-            <Button type="submit" className="w-full gradient-primary text-white border-0 hover:opacity-90">
+            <Button type="submit" className="w-full gradient-primary text-white border-0 hover:opacity-90 h-11">
               Ücretsiz Değerlendirme Talep Et
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
+            <p className="text-xs text-center text-muted-foreground">
+              Bilgileriniz gizli tutulur. KVKK uyumlu.
+            </p>
           </form>
         </div>
       </div>

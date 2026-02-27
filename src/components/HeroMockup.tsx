@@ -17,21 +17,170 @@ const effects = [
 ];
 
 const HeroMockup = () => {
-  const [activeEffect, setActiveEffect] = useState<string>("grayscale");
+  const [activeEffect, setActiveEffect] = useState<string>("cursor");
+  const [isReading, setIsReading] = useState(false);
+
+  const handleEffectClick = (effectId: string) => {
+    setActiveEffect(effectId);
+    
+    // Sesli okuma özelliği
+    if (effectId === "reading") {
+      if (!isReading) {
+        const text = "Erişilebilirlik ayarları aktif. Web sitenizi herkes için daha erişilebilir hale getirin.";
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'tr-TR';
+        utterance.onend = () => setIsReading(false);
+        window.speechSynthesis.speak(utterance);
+        setIsReading(true);
+      } else {
+        window.speechSynthesis.cancel();
+        setIsReading(false);
+      }
+    }
+  };
 
   const getContentClass = () => {
     switch (activeEffect) {
       case "grayscale": return "grayscale";
-      case "contrast": return "contrast-150 invert";
-      case "zoom": return "scale-110 origin-top-left";
-      case "colorblind": return "grayscale-[60%] sepia-[30%]";
+      case "contrast": return "contrast-150 brightness-110";
+      case "zoom": return "scale-125 origin-top-left";
+      case "highlight": return "brightness-105";
+      case "colorblind": return "hue-rotate-180 saturate-150";
+      case "align": return "text-left";
+      case "reading": return "brightness-95";
+      case "cursor": return "";
+      case "no-animation": return "";
       default: return "";
     }
   };
 
+  const getBackgroundDemo = () => {
+    switch (activeEffect) {
+      case "cursor":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="text-left space-y-4 bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[360px]">
+              <MousePointer className="w-20 h-20 text-primary animate-bounce" />
+              <p className="text-xl font-bold text-foreground">Büyük İmleç Aktif</p>
+              <p className="text-base text-muted-foreground">İmleci hareket ettirin ve büyük imleci görün</p>
+            </div>
+          </div>
+        );
+      case "highlight":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="space-y-4 bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[360px]">
+              <p className="text-lg font-bold text-foreground mb-3">Bağlantı Vurgulama</p>
+              <div className="space-y-3">
+                <a href="#" className="block text-primary underline text-base font-semibold ring-2 ring-primary/60 rounded-lg px-4 py-3 bg-primary/15">
+                  Ana Sayfa
+                </a>
+                <a href="#" className="block text-primary underline text-base font-semibold ring-2 ring-primary/60 rounded-lg px-4 py-3 bg-primary/15">
+                  Hakkımızda
+                </a>
+                <a href="#" className="block text-primary underline text-base font-semibold ring-2 ring-primary/60 rounded-lg px-4 py-3 bg-primary/15">
+                  İletişim
+                </a>
+              </div>
+              <p className="text-sm text-muted-foreground mt-2">Bağlantılar vurgulanır</p>
+            </div>
+          </div>
+        );
+      case "align":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[380px]">
+              <div className="text-left space-y-4">
+                <h3 className="text-xl font-bold text-foreground">Metin Hizalama</h3>
+                <p className="text-base text-foreground/90 leading-relaxed">
+                  Bu paragraf sola hizalanmıştır. Metinler daha okunaklı ve düzenli görünür.
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  Erişilebilirlik için metinlerin düzgün hizalanması önemlidir.
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      case "zoom":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30">
+              <div className="text-left space-y-3 scale-125 origin-top-left">
+                <p className="text-2xl font-bold text-foreground">Büyütme Aktif</p>
+                <p className="text-base text-muted-foreground">%125 büyütülmüş içerik</p>
+              </div>
+            </div>
+          </div>
+        );
+      case "reading":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
+              <div className="text-left space-y-4">
+                <Volume2 className="w-16 h-16 text-primary animate-pulse" />
+                <p className="text-xl font-bold text-foreground">Sesli Okuma</p>
+                <p className="text-base text-muted-foreground">Metin sesli olarak okunuyor</p>
+              </div>
+            </div>
+          </div>
+        );
+      case "no-animation":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
+              <div className="text-left space-y-4">
+                <PauseCircle className="w-16 h-16 text-primary" />
+                <p className="text-xl font-bold text-foreground">Animasyon Durdur</p>
+                <p className="text-base text-muted-foreground">Tüm hareketler durduruldu</p>
+              </div>
+            </div>
+          </div>
+        );
+      case "grayscale":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
+              <div className="text-left space-y-4">
+                <Moon className="w-16 h-16 text-primary" />
+                <p className="text-xl font-bold text-foreground">Gri Tonlama</p>
+                <p className="text-base text-muted-foreground">Renkler gri tonlara çevrildi</p>
+              </div>
+            </div>
+          </div>
+        );
+      case "contrast":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
+              <div className="text-left space-y-4">
+                <SlidersHorizontal className="w-16 h-16 text-primary" />
+                <p className="text-xl font-bold text-foreground">Yüksek Kontrast</p>
+                <p className="text-base text-muted-foreground">Kontrast artırıldı</p>
+              </div>
+            </div>
+          </div>
+        );
+      case "colorblind":
+        return (
+          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
+            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
+              <div className="text-left space-y-4">
+                <Palette className="w-16 h-16 text-primary" />
+                <p className="text-xl font-bold text-foreground">Renk Körü Modu</p>
+                <p className="text-base text-muted-foreground">Renkler ayarlandı</p>
+              </div>
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
   return (
-    <div className="animate-float">
-      <div className="relative max-w-[650px] mx-auto">
+    <div className={activeEffect === "no-animation" ? "" : "animate-float"}>
+      <div className="relative max-w-[1100px] mx-auto">
         {/* Browser frame */}
         <div className="bg-background rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.15)] overflow-hidden relative z-10">
           {/* Browser bar */}
@@ -47,9 +196,14 @@ const HeroMockup = () => {
           </div>
 
           {/* Browser content */}
-          <div className="relative min-h-[420px] bg-gradient-to-br from-muted/50 to-secondary/5 p-6">
+          <div 
+            className={`relative min-h-[550px] bg-gradient-to-br from-muted/50 to-secondary/5 p-12`}
+            style={activeEffect === "cursor" ? {
+              cursor: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="none"><path d="M4 4 L4 28 L12 20 L16 28 L20 26 L16 18 L28 18 Z" fill="%23000" stroke="%23fff" stroke-width="2"/></svg>') 8 8, auto`
+            } : {}}
+          >
             {/* Website preview (background) */}
-            <div className={`opacity-35 transition-all duration-500 ${getContentClass()}`}>
+            <div className={`opacity-35 transition-all duration-500 ${getContentClass()} ${activeEffect === "no-animation" ? "[&_*]:!animate-none" : ""}`}>
               {/* Mini nav */}
               <div className="flex justify-between items-center p-2 bg-background/80 rounded-lg mb-3">
                 <div className="w-12 h-2 bg-foreground/70 rounded" />
@@ -60,8 +214,8 @@ const HeroMockup = () => {
                 </div>
               </div>
               {/* Mini hero */}
-              <div className="grid grid-cols-[1.3fr_1fr] gap-3 mb-3 p-4 bg-background/60 rounded-lg">
-                <div className="flex flex-col gap-1.5 justify-center">
+              <div className={`grid grid-cols-[1.3fr_1fr] gap-3 mb-3 p-4 bg-background/60 rounded-lg ${activeEffect === "highlight" ? "ring-2 ring-primary/50" : ""}`}>
+                <div className={`flex flex-col gap-1.5 justify-center ${activeEffect === "align" ? "items-start" : ""}`}>
                   <div className="h-3 w-4/5 bg-foreground/50 rounded" />
                   <div className="h-2.5 w-3/5 bg-foreground/30 rounded" />
                   <div className="h-2 w-full bg-muted-foreground/10 rounded" />
@@ -85,8 +239,11 @@ const HeroMockup = () => {
               </div>
             </div>
 
+            {/* Demo overlay for specific effects */}
+            {getBackgroundDemo()}
+
             {/* Floating accessibility panel */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-background rounded-2xl p-5 shadow-[0_20px_60px_hsla(265,82%,44%,0.25)] w-[90%] max-w-[380px]">
+            <div className="absolute top-1/2 right-16 -translate-y-1/2 bg-background rounded-2xl p-6 shadow-[0_20px_60px_hsla(265,82%,44%,0.25)] w-[440px] z-20">
               <div className="flex items-center gap-2.5 mb-5 font-bold text-foreground">
                 <Accessibility className="w-5 h-5 text-primary" />
                 <span>Erişilebilirlik Ayarları</span>
@@ -95,7 +252,7 @@ const HeroMockup = () => {
                 {effects.map((effect) => (
                   <button
                     key={effect.id}
-                    onClick={() => setActiveEffect(effect.id)}
+                    onClick={() => handleEffectClick(effect.id)}
                     className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all cursor-pointer text-center ${
                       activeEffect === effect.id
                         ? "gradient-primary text-white border-primary shadow-lg scale-105"
@@ -110,15 +267,18 @@ const HeroMockup = () => {
             </div>
 
             {/* Floating trigger */}
-            <div className="absolute bottom-6 right-6 w-12 h-12 gradient-primary rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_hsla(265,82%,44%,0.4)] animate-pulse cursor-pointer">
-              <Accessibility className="w-5 h-5" />
+            <div 
+              className={`absolute bottom-8 right-8 w-14 h-14 gradient-primary rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_hsla(265,82%,44%,0.4)] cursor-pointer z-20 ${activeEffect === "no-animation" ? "" : "animate-pulse"}`}
+              onClick={() => setActiveEffect("cursor")}
+            >
+              <Accessibility className="w-6 h-6" />
             </div>
           </div>
         </div>
 
         {/* Decorations */}
-        <div className="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/10 animate-float" />
-        <div className="absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-secondary/10 animate-float" style={{ animationDelay: "2s" }} />
+        <div className={`absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/10 ${activeEffect === "no-animation" ? "" : "animate-float"}`} />
+        <div className={`absolute -bottom-8 -left-8 w-36 h-36 rounded-full bg-secondary/10 ${activeEffect === "no-animation" ? "" : "animate-float"}`} style={{ animationDelay: "2s" }} />
       </div>
     </div>
   );

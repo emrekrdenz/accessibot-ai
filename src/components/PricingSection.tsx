@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Shield } from "lucide-react";
+import { Check, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -15,10 +15,11 @@ const plans = [
       "Aylık erişilebilirlik raporu",
       "1 web sitesi",
       "E-posta desteği",
+      "14 gün ücretsiz deneme",
     ],
-    cta: "Başlayın",
+    cta: "Ücretsiz Deneyin",
     featured: false,
-    trustText: "14 gün ücretsiz deneme",
+    trustText: "Kredi kartı gerektirmez",
   },
   {
     name: "Profesyonel",
@@ -28,13 +29,14 @@ const plans = [
     features: [
       "WCAG 2.1 AA & AAA Uyumluluğu",
       "Gelişmiş erişilebilirlik paneli",
-      "Haftalık otomatik tarama",
+      "Haftalık otomatik AI tarama",
       "5 web sitesine kadar",
       "Öncelikli destek",
       "AI destekli ARIA etiketleme",
       "Yasal uyumluluk sertifikası",
+      "Özelleştirilebilir widget tasarımı",
     ],
-    cta: "Başlayın",
+    cta: "Ücretsiz Deneyin",
     featured: true,
     trustText: "En çok tercih edilen plan",
   },
@@ -42,15 +44,16 @@ const plans = [
     name: "Kurumsal",
     monthlyPrice: null,
     yearlyPrice: null,
-    desc: "Büyük kuruluşlar ve kamu kurumları için",
+    desc: "Büyük kuruluşlar ve kamu kurumları",
     features: [
       "Tüm standartlara tam uyumluluk",
       "Özelleştirilebilir erişilebilirlik paneli",
-      "Gerçek zamanlı izleme",
+      "Gerçek zamanlı izleme & uyarılar",
       "Sınırsız web sitesi",
-      "7/24 özel destek",
+      "7/24 özel destek hattı",
       "SLA garantisi",
       "Özel entegrasyon desteği",
+      "Dedicated account manager",
     ],
     cta: "İletişime Geçin",
     featured: false,
@@ -62,7 +65,7 @@ const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="pricing" className="py-24 bg-muted/30">
+    <section id="pricing" className="py-24 bg-background">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <span className="inline-block text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
@@ -72,10 +75,9 @@ const PricingSection = () => {
             İhtiyacınıza Uygun Plan Seçin
           </h2>
           <p className="text-muted-foreground text-lg mb-8">
-            Her ölçekteki web sitesi için uygun fiyatlı erişilebilirlik çözümleri sunuyoruz.
+            Her ölçekteki web sitesi için uygun fiyatlı erişilebilirlik çözümleri.
           </p>
 
-          {/* Toggle */}
           <div className="inline-flex items-center gap-4 bg-card rounded-full p-1.5 border">
             <button
               onClick={() => setIsYearly(false)}
@@ -143,6 +145,7 @@ const PricingSection = () => {
                 variant={plan.featured ? "default" : "outline"}
               >
                 {plan.cta}
+                {plan.featured && <ArrowRight className="ml-2 w-4 h-4" />}
               </Button>
 
               <p className="text-xs text-muted-foreground text-center mt-3">{plan.trustText}</p>
@@ -150,11 +153,10 @@ const PricingSection = () => {
           ))}
         </div>
 
-        {/* ROI message */}
         <div className="text-center mt-12 flex items-center justify-center gap-2">
           <Shield className="w-5 h-5 text-primary" />
           <p className="text-sm text-muted-foreground">
-            Erişilebilirlik yatırımınız, yasal risklerden korunmanızı ve daha geniş kitlelere ulaşmanızı sağlar.
+            Tüm planlar 14 gün ücretsiz deneme ile gelir. Memnun kalmazsanız iptal edin, ödeme yapılmaz.
           </p>
         </div>
       </div>

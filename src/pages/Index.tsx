@@ -1,15 +1,16 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import LogoStripSection from "@/components/LogoStripSection";
 import ProblemSection from "@/components/ProblemSection";
 import TechSolutions from "@/components/TechSolutions";
+import FeaturesSection from "@/components/FeaturesSection";
 import SimulationSection from "@/components/SimulationSection";
 import StatisticsSection from "@/components/StatisticsSection";
-import StandardsSection from "@/components/StandardsSection";
-import FeaturesSection from "@/components/FeaturesSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import IntegrationSection from "@/components/IntegrationSection";
 import SocialProofSection from "@/components/SocialProofSection";
-import PerformanceSection from "@/components/PerformanceSection";
 import PricingSection from "@/components/PricingSection";
+import ROISection from "@/components/ROISection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
@@ -20,16 +21,17 @@ const Index = () => {
       <Navbar />
       <main>
         <HeroSection />
+        <LogoStripSection />
         <ProblemSection />
         <TechSolutions />
+        <FeaturesSection />
         <SimulationSection />
         <StatisticsSection />
-        <StandardsSection />
-        <FeaturesSection />
         <HowItWorksSection />
+        <IntegrationSection />
         <SocialProofSection />
-        <PerformanceSection />
         <PricingSection />
+        <ROISection />
         <FAQSection />
         <ContactSection />
       </main>

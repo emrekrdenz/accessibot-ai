@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(npm run dev)",
+      "Bash(ls -la /Users/testinium/Desktop/isler/accessibot-ai/src/components/*.tsx)",
+      "WebFetch(domain:accessibe.com)",
+      "WebFetch(domain:userway.org)",
+      "WebFetch(domain:www.equalweb.com)",
+      "WebFetch(domain:www.audioeye.com)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)"
+    ]
+  }
+}
