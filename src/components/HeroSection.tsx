@@ -13,8 +13,8 @@ const HeroSection = () => {
 
   const microTrust = [
     { icon: Clock, text: "Kurulum 5 dakika" },
-    { icon: Zap, text: "Site hızını etkilemez" },
-    { icon: Code, text: "Developer gerektirmez" },
+    { icon: Zap, text: "58+ erişilebilirlik özelliği" },
+    { icon: Code, text: "Tek satır kod" },
   ];
 
   return (
@@ -35,8 +35,7 @@ const HeroSection = () => {
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
-              İKE, web sitenizi WCAG 2.1, ADA ve EN 301 549 gibi dünya genelinde kabul gören erişilebilirlik
-              standartlarına uyumlu hale getirir. Tek satır kod ile başlayın.
+              İKE, 58+ erişilebilirlik özelliği ve 6 hazır profil ile web sitenizi WCAG 2.1, ADA, EAA 2025 ve EN 301 549 standartlarına uyumlu hale getirir. Shadow DOM izolasyonu ile tek satır kodla başlayın.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">

@@ -9,7 +9,12 @@
       "WebFetch(domain:www.equalweb.com)",
       "WebFetch(domain:www.audioeye.com)",
       "Bash(npx tsc --noEmit)",
-      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)"
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(grep -r \"animate\\\\|animation\" /Users/testinium/Desktop/isler/accessibot-ai/src/components/ --include=*.tsx)",
+      "Bash(grep -r \"<img\\\\|<Image\" /Users/testinium/Desktop/isler/accessibot-ai/src/components/ --include=*.tsx)",
+      "Bash(grep -r \"<label\\\\|<input\\\\|<button\" /Users/testinium/Desktop/isler/accessibot-ai/src/components/ --include=*.tsx)",
+      "Bash(grep -r \"<nav\\\\|<h1\\\\|<h2\\\\|<h3\\\\|<h4\\\\|role=\"\"navigation\"\"\" /Users/testinium/Desktop/isler/accessibot-ai/src/components/ --include=*.tsx)",
+      "Bash(find '/Users/testinium/Desktop/isler/wcag widget/frontend/src' -type f -name *widget* -o -name *accessibility*)"
     ]
   }
 }

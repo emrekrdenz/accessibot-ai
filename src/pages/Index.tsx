@@ -4,11 +4,11 @@ import LogoStripSection from "@/components/LogoStripSection";
 import ProblemSection from "@/components/ProblemSection";
 import TechSolutions from "@/components/TechSolutions";
 import FeaturesSection from "@/components/FeaturesSection";
+import QuickProfilesSection from "@/components/QuickProfilesSection";
 import SimulationSection from "@/components/SimulationSection";
 import StatisticsSection from "@/components/StatisticsSection";
-import HowItWorksSection from "@/components/HowItWorksSection";
 
-import SocialProofSection from "@/components/SocialProofSection";
+import HowItWorksSection from "@/components/HowItWorksSection";
 import PricingSection from "@/components/PricingSection";
 import ROISection from "@/components/ROISection";
 import FAQSection from "@/components/FAQSection";
@@ -19,17 +19,17 @@ const Index = () => {
   return (
     <div className="min-h-screen font-outfit">
       <Navbar />
-      <main>
+      <main id="main-content">
         <HeroSection />
         <LogoStripSection />
         <ProblemSection />
         <TechSolutions />
         <FeaturesSection />
+        <QuickProfilesSection />
         <SimulationSection />
         <StatisticsSection />
-        <HowItWorksSection />
 
-        <SocialProofSection />
+        <HowItWorksSection />
         <PricingSection />
         <ROISection />
         <FAQSection />

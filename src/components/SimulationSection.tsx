@@ -162,6 +162,7 @@ const SimulationSection = () => {
               <button
                 key={profile.id}
                 onClick={() => setActiveSim(profile.id)}
+                aria-pressed={activeSim === profile.id}
                 className={`flex items-center gap-3.5 px-4 py-3.5 rounded-xl border text-left transition-all w-full ${
                   activeSim === profile.id
                     ? "bg-accent-blue/12 border-accent-blue shadow-[0_0_20px_hsla(207,98%,65%,0.15)]"

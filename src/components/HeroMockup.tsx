@@ -88,16 +88,14 @@ const HeroMockup = () => {
         );
       case "align":
         return (
-          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
-            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[380px]">
-              <div className="text-left space-y-4">
-                <h3 className="text-xl font-bold text-foreground">Metin Hizalama</h3>
-                <p className="text-base text-foreground/90 leading-relaxed">
-                  Bu paragraf sola hizalanmıştır. Metinler daha okunaklı ve düzenli görünür.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Erişilebilirlik için metinlerin düzgün hizalanması önemlidir.
-                </p>
+          <div className="absolute bottom-8 left-8 pointer-events-none z-0">
+            <div className="bg-background/95 px-5 py-3 rounded-xl shadow-xl border border-primary/20">
+              <div className="flex items-center gap-3">
+                <AlignLeft className="w-5 h-5 text-primary" />
+                <div>
+                  <p className="text-sm font-bold text-foreground">Metin Hizalama Aktif</p>
+                  <p className="text-xs text-muted-foreground">Tüm metinler sola hizalandı</p>
+                </div>
               </div>
             </div>
           </div>
@@ -139,36 +137,36 @@ const HeroMockup = () => {
         );
       case "grayscale":
         return (
-          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
-            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
-              <div className="text-left space-y-4">
-                <Moon className="w-16 h-16 text-primary" />
-                <p className="text-xl font-bold text-foreground">Gri Tonlama</p>
-                <p className="text-base text-muted-foreground">Renkler gri tonlara çevrildi</p>
+          <div className="absolute bottom-8 left-8 pointer-events-none z-0">
+            <div className="bg-background/95 px-5 py-3 rounded-xl shadow-xl border border-primary/20 flex items-center gap-3">
+              <Moon className="w-5 h-5 text-primary" />
+              <div>
+                <p className="text-sm font-bold text-foreground">Gri Tonlama Aktif</p>
+                <p className="text-xs text-muted-foreground">Tüm renkler gri tonlara çevrildi</p>
               </div>
             </div>
           </div>
         );
       case "contrast":
         return (
-          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
-            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
-              <div className="text-left space-y-4">
-                <SlidersHorizontal className="w-16 h-16 text-primary" />
-                <p className="text-xl font-bold text-foreground">Yüksek Kontrast</p>
-                <p className="text-base text-muted-foreground">Kontrast artırıldı</p>
+          <div className="absolute bottom-8 left-8 pointer-events-none z-0">
+            <div className="bg-background/95 px-5 py-3 rounded-xl shadow-xl border border-primary/20 flex items-center gap-3">
+              <SlidersHorizontal className="w-5 h-5 text-primary" />
+              <div>
+                <p className="text-sm font-bold text-foreground">Yüksek Kontrast Aktif</p>
+                <p className="text-xs text-muted-foreground">Kontrast %150 artırıldı</p>
               </div>
             </div>
           </div>
         );
       case "colorblind":
         return (
-          <div className="absolute top-1/2 left-16 -translate-y-1/2 pointer-events-none z-0">
-            <div className="bg-background/95 p-8 rounded-2xl shadow-2xl border-2 border-primary/30 max-w-[340px]">
-              <div className="text-left space-y-4">
-                <Palette className="w-16 h-16 text-primary" />
-                <p className="text-xl font-bold text-foreground">Renk Körü Modu</p>
-                <p className="text-base text-muted-foreground">Renkler ayarlandı</p>
+          <div className="absolute bottom-8 left-8 pointer-events-none z-0">
+            <div className="bg-background/95 px-5 py-3 rounded-xl shadow-xl border border-primary/20 flex items-center gap-3">
+              <Palette className="w-5 h-5 text-primary" />
+              <div>
+                <p className="text-sm font-bold text-foreground">Renk Körü Modu Aktif</p>
+                <p className="text-xs text-muted-foreground">Renkler uyumlu hale getirildi</p>
               </div>
             </div>
           </div>
@@ -203,37 +201,43 @@ const HeroMockup = () => {
             } : {}}
           >
             {/* Website preview (background) */}
-            <div className={`opacity-35 transition-all duration-500 ${getContentClass()} ${activeEffect === "no-animation" ? "[&_*]:!animate-none" : ""}`}>
+            <div className={`${activeEffect === "grayscale" || activeEffect === "contrast" || activeEffect === "colorblind" ? "opacity-70" : "opacity-35"} transition-all duration-500 ${getContentClass()} ${activeEffect === "no-animation" ? "[&_*]:!animate-none" : ""}`}>
               {/* Mini nav */}
               <div className="flex justify-between items-center p-2 bg-background/80 rounded-lg mb-3">
-                <div className="w-12 h-2 bg-foreground/70 rounded" />
+                <div className="w-12 h-2 bg-blue-600 rounded" />
                 <div className="flex gap-2">
-                  <div className="w-8 h-1.5 bg-muted-foreground/30 rounded" />
-                  <div className="w-8 h-1.5 bg-muted-foreground/30 rounded" />
-                  <div className="w-8 h-1.5 bg-primary/60 rounded" />
+                  <div className="w-8 h-1.5 bg-foreground/40 rounded" />
+                  <div className="w-8 h-1.5 bg-foreground/40 rounded" />
+                  <div className="w-8 h-1.5 bg-primary rounded" />
                 </div>
               </div>
               {/* Mini hero */}
               <div className={`grid grid-cols-[1.3fr_1fr] gap-3 mb-3 p-4 bg-background/60 rounded-lg ${activeEffect === "highlight" ? "ring-2 ring-primary/50" : ""}`}>
                 <div className={`flex flex-col gap-1.5 justify-center ${activeEffect === "align" ? "items-start" : ""}`}>
-                  <div className="h-3 w-4/5 bg-foreground/50 rounded" />
-                  <div className="h-2.5 w-3/5 bg-foreground/30 rounded" />
-                  <div className="h-2 w-full bg-muted-foreground/10 rounded" />
-                  <div className="h-2 w-3/5 bg-muted-foreground/10 rounded" />
+                  <div className="h-3 w-4/5 bg-foreground/60 rounded" />
+                  <div className="h-2.5 w-3/5 bg-secondary rounded" />
+                  <div className="h-2 w-full bg-muted-foreground/20 rounded" />
+                  <div className="h-2 w-3/5 bg-muted-foreground/20 rounded" />
                   <div className="flex gap-1.5 mt-1.5">
                     <div className="h-5 w-14 rounded gradient-primary" />
-                    <div className="h-5 w-14 rounded border-2 border-muted-foreground/20" />
+                    <div className="h-5 w-14 rounded bg-green-500" />
                   </div>
                 </div>
-                <div className="flex items-center justify-center bg-gradient-to-br from-secondary/10 to-primary/10 rounded-lg min-h-[100px]" />
+                <div className="flex items-center justify-center bg-gradient-to-br from-orange-300/40 to-blue-400/40 rounded-lg min-h-[100px]">
+                  <div className="w-10 h-10 rounded-full bg-red-400/60" />
+                </div>
               </div>
               {/* Mini cards */}
               <div className="grid grid-cols-3 gap-2">
-                {[1, 2, 3].map((i) => (
+                {[
+                  { bg: "from-blue-400/30 to-purple-400/30", bar: "bg-blue-500" },
+                  { bg: "from-green-400/30 to-teal-400/30", bar: "bg-green-500" },
+                  { bg: "from-orange-400/30 to-red-400/30", bar: "bg-orange-500" },
+                ].map((card, i) => (
                   <div key={i} className="bg-background/70 rounded-lg p-3 flex flex-col gap-1.5">
-                    <div className="w-6 h-6 rounded bg-gradient-to-br from-secondary/10 to-primary/10" />
-                    <div className="h-1.5 w-4/5 bg-muted-foreground/12 rounded" />
-                    <div className="h-1.5 w-3/5 bg-muted-foreground/8 rounded" />
+                    <div className={`w-6 h-6 rounded bg-gradient-to-br ${card.bg}`} />
+                    <div className={`h-1.5 w-4/5 ${card.bar} rounded opacity-60`} />
+                    <div className="h-1.5 w-3/5 bg-muted-foreground/15 rounded" />
                   </div>
                 ))}
               </div>
@@ -253,6 +257,7 @@ const HeroMockup = () => {
                   <button
                     key={effect.id}
                     onClick={() => handleEffectClick(effect.id)}
+                    aria-pressed={activeEffect === effect.id}
                     className={`flex flex-col items-center gap-1.5 p-3 rounded-xl border-2 transition-all cursor-pointer text-center ${
                       activeEffect === effect.id
                         ? "gradient-primary text-white border-primary shadow-lg scale-105"

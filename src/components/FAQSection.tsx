@@ -42,23 +42,31 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-24 bg-muted/30">
+    <section className="py-28 bg-muted/30 relative">
       <div className="container max-w-3xl">
         <div className="text-center mb-14">
-          <span className="inline-block text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
+          <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
             SSS
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Sıkça Sorulan Sorular</h2>
-          <p className="text-muted-foreground text-lg">
+          </div>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-foreground mb-5 leading-tight">
+            Sıkça Sorulan <span className="text-gradient">Sorular</span>
+          </h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">
             İKE hakkında merak ettikleriniz
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="w-full space-y-3">
           {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`item-${i}`}>
-              <AccordionTrigger className="text-left font-semibold">{faq.q}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground leading-relaxed">
+            <AccordionItem
+              key={i}
+              value={`item-${i}`}
+              className="bg-card border border-border/50 rounded-xl px-6 data-[state=open]:border-primary/20 data-[state=open]:shadow-[0_4px_20px_hsla(265,82%,44%,0.06)] transition-all"
+            >
+              <AccordionTrigger className="text-left font-semibold text-[15px] hover:no-underline py-5">
+                {faq.q}
+              </AccordionTrigger>
+              <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
                 {faq.a}
               </AccordionContent>
             </AccordionItem>
