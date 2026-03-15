@@ -54,7 +54,7 @@ const Footer = () => {
               className="h-11 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 text-sm flex-1 md:w-64 focus:outline-none focus:border-white/20 transition-colors"
               aria-label="E-posta adresi"
             />
-            <button className="h-11 px-5 rounded-xl gradient-primary text-white text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-[0_4px_12px_hsla(265,82%,44%,0.3)]">
+            <button className="h-11 px-5 rounded-xl gradient-primary text-white text-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity shadow-[0_4px_12px_hsla(225,84%,55%,0.3)]">
               Abone Ol
               <ArrowRight className="w-4 h-4" />
             </button>

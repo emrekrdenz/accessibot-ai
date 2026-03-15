@@ -1,13 +1,13 @@
 import { useState } from "react";
 import {
-  Eye, Palette, Type, Target, Users, Zap,
+  EyeOff, Blend, BookOpenText, Focus, HeartHandshake, ShieldAlert,
   Check
 } from "lucide-react";
 
 const profiles = [
   {
     id: "vision",
-    icon: Eye,
+    icon: EyeOff,
     title: "Görme Engelli Profili",
     desc: "Düşük görüşlü kullanıcılar için optimize edilmiş deneyim",
     color: "from-blue-500 to-indigo-600",
@@ -20,10 +20,10 @@ const profiles = [
   },
   {
     id: "colorblind",
-    icon: Palette,
+    icon: Blend,
     title: "Renk Körü Profili",
     desc: "Renk körlüğü olan kullanıcılar için özel filtreler",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-blue-500 to-indigo-600",
     features: [
       "Deuteranopi filtresi",
       "Link vurgulama",
@@ -33,7 +33,7 @@ const profiles = [
   },
   {
     id: "dyslexia",
-    icon: Type,
+    icon: BookOpenText,
     title: "Disleksi Profili",
     desc: "Okuma zorluğu yaşayan kullanıcılar için düzenlemeler",
     color: "from-violet-500 to-purple-600",
@@ -46,7 +46,7 @@ const profiles = [
   },
   {
     id: "adhd",
-    icon: Target,
+    icon: Focus,
     title: "DEHB Profili",
     desc: "Dikkat dağınıklığı yaşayan kullanıcılar için odak araçları",
     color: "from-amber-500 to-orange-600",
@@ -59,7 +59,7 @@ const profiles = [
   },
   {
     id: "senior",
-    icon: Users,
+    icon: HeartHandshake,
     title: "Yaşlı Dostu Profil",
     desc: "Yaşlı kullanıcılar için büyütülmüş ve sade arayüz",
     color: "from-rose-500 to-pink-600",
@@ -72,7 +72,7 @@ const profiles = [
   },
   {
     id: "epilepsy",
-    icon: Zap,
+    icon: ShieldAlert,
     title: "Epilepsi Güvenli Profil",
     desc: "Nöbet riski olan kullanıcılar için güvenli deneyim",
     color: "from-cyan-500 to-blue-600",
@@ -114,7 +114,7 @@ const QuickProfilesSection = () => {
                 aria-pressed={activeProfile === profile.id}
                 className={`flex flex-col items-center gap-2 p-4 rounded-2xl border text-center transition-all ${
                   activeProfile === profile.id
-                    ? "border-primary/30 bg-card shadow-[0_8px_30px_hsla(265,82%,44%,0.1)]"
+                    ? "border-primary/30 bg-card shadow-[0_8px_30px_hsla(225,84%,55%,0.1)]"
                     : "border-border/50 bg-card/50 hover:border-primary/15 hover:bg-card"
                 }`}
               >
@@ -131,7 +131,7 @@ const QuickProfilesSection = () => {
           </div>
 
           {/* Profile detail */}
-          <div className="bg-card rounded-2xl border border-border/50 p-8 shadow-[0_8px_30px_hsla(265,82%,44%,0.05)]">
+          <div className="bg-card rounded-2xl border border-border/50 p-8 shadow-[0_8px_30px_hsla(225,84%,55%,0.05)]">
             <div className="flex items-center gap-4 mb-6">
               <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${active.color} flex items-center justify-center shadow-lg`}>
                 <active.icon className="w-7 h-7 text-white" />

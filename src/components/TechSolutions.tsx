@@ -1,30 +1,30 @@
-import { Sparkles, Accessibility, ShieldCheck, Layers, ArrowRight, Code2, Cpu, Globe, Lock } from "lucide-react";
+import { ScanSearch, LayoutGrid, FileCheck, Activity, ArrowRight, Braces, HardDrive, Globe, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const cards = [
   {
-    icon: Sparkles,
+    icon: ScanSearch,
     title: "AI Destekli Tarama",
     desc: "Yapay zeka motorumuz sitenizi otomatik tarar, WCAG eksikliklerini tespit eder ve anında düzeltir.",
     highlight: "Otomatik düzeltme",
     span: "lg:col-span-2",
   },
   {
-    icon: Accessibility,
+    icon: LayoutGrid,
     title: "58+ Erişilebilirlik Özelliği",
     desc: "7 kategoride 58'den fazla özellik: metin, renk, okuma, navigasyon, içerik, profiller ve gelişmiş araçlar.",
     highlight: "6 hazır profil",
     span: "",
   },
   {
-    icon: ShieldCheck,
+    icon: FileCheck,
     title: "Uyumluluk Sertifikası",
     desc: "WCAG 2.1, ADA, EN 301 549, EAA 2025 ve 5378 sayılı kanuna uyum sertifikanızı otomatik alın.",
     highlight: "Yasal koruma",
     span: "",
   },
   {
-    icon: Layers,
+    icon: Activity,
     title: "Gerçek Zamanlı İzleme",
     desc: "Özellik kullanım analitiği, oturum takibi, heartbeat monitoring ve event queue sistemi ile canlı raporlama.",
     highlight: "Canlı analytics",
@@ -33,10 +33,10 @@ const cards = [
 ];
 
 const techSpecs = [
-  { icon: Code2, label: "Shadow DOM", desc: "Tam stil izolasyonu" },
-  { icon: Cpu, label: "283 KB", desc: "Optimize edilmiş bundle" },
+  { icon: Braces, label: "Shadow DOM", desc: "Tam stil izolasyonu" },
+  { icon: HardDrive, label: "283 KB", desc: "Optimize edilmiş bundle" },
   { icon: Globe, label: "Global CDN", desc: "Hızlı yükleme" },
-  { icon: Lock, label: "API Key + Domain", desc: "Güvenli doğrulama" },
+  { icon: KeyRound, label: "API Key + Domain", desc: "Güvenli doğrulama" },
 ];
 
 const TechSolutions = () => {
@@ -58,7 +58,7 @@ const TechSolutions = () => {
             <p className="text-muted-foreground leading-relaxed mb-5">
               İKE, Shadow DOM ile izole çalışan, modüler mimariye sahip, API key ve domain doğrulaması yapan kurumsal seviye bir erişilebilirlik çözümüdür.
             </p>
-            <Button className="gradient-primary text-white border-0 hover:opacity-90 gap-2 shadow-[0_4px_16px_hsla(265,82%,44%,0.25)] h-11 px-6">
+            <Button className="gradient-primary text-white border-0 hover:opacity-90 gap-2 shadow-[0_4px_16px_hsla(225,84%,55%,0.25)] h-11 px-6">
               Detaylı Bilgi <ArrowRight className="w-4 h-4" />
             </Button>
           </div>
@@ -68,11 +68,11 @@ const TechSolutions = () => {
           {cards.map((card) => (
             <div
               key={card.title}
-              className={`group relative bg-card rounded-2xl p-7 border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(265,82%,44%,0.08)] overflow-hidden ${card.span}`}
+              className={`group relative bg-card rounded-2xl p-7 border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(225,84%,55%,0.06)] overflow-hidden ${card.span}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-secondary/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-indigo-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-5 group-hover:shadow-[0_4px_12px_hsla(265,82%,44%,0.15)] transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-indigo-500/10 flex items-center justify-center mb-5 group-hover:shadow-[0_4px_12px_hsla(225,84%,55%,0.12)] transition-shadow">
                   <card.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{card.title}</h3>
@@ -85,7 +85,6 @@ const TechSolutions = () => {
           ))}
         </div>
 
-        {/* Tech specs strip */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {techSpecs.map((spec) => (
             <div key={spec.label} className="flex items-center gap-3 bg-card rounded-xl px-5 py-4 border border-border/50">

@@ -84,7 +84,7 @@ const PricingSection = () => {
               onClick={() => setIsYearly(false)}
               aria-pressed={!isYearly}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                !isYearly ? "gradient-primary text-white shadow-[0_2px_8px_hsla(265,82%,44%,0.3)]" : "text-muted-foreground hover:text-foreground"
+                !isYearly ? "gradient-primary text-white shadow-[0_2px_8px_hsla(225,84%,55%,0.3)]" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Aylık
@@ -93,7 +93,7 @@ const PricingSection = () => {
               onClick={() => setIsYearly(true)}
               aria-pressed={isYearly}
               className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                isYearly ? "gradient-primary text-white shadow-[0_2px_8px_hsla(265,82%,44%,0.3)]" : "text-muted-foreground hover:text-foreground"
+                isYearly ? "gradient-primary text-white shadow-[0_2px_8px_hsla(225,84%,55%,0.3)]" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               Yıllık <span className="text-xs opacity-80 ml-1">%20 indirim</span>
@@ -107,13 +107,13 @@ const PricingSection = () => {
               key={plan.name}
               className={`relative bg-card rounded-2xl border p-8 transition-all duration-300 ${
                 plan.featured
-                  ? "border-primary/30 shadow-[0_20px_60px_hsla(265,82%,44%,0.12)] scale-[1.03] z-10"
-                  : "border-border/50 hover:border-primary/15 hover:shadow-[0_8px_30px_hsla(265,82%,44%,0.06)]"
+                  ? "border-primary/30 shadow-[0_20px_60px_hsla(225,84%,55%,0.12)] scale-[1.03] z-10"
+                  : "border-border/50 hover:border-primary/15 hover:shadow-[0_8px_30px_hsla(225,84%,55%,0.06)]"
               }`}
             >
               {plan.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="gradient-primary text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-[0_4px_12px_hsla(265,82%,44%,0.3)]">
+                  <span className="gradient-primary text-white text-xs font-bold px-5 py-1.5 rounded-full shadow-[0_4px_12px_hsla(225,84%,55%,0.3)]">
                     En Popüler
                   </span>
                 </div>
@@ -149,7 +149,7 @@ const PricingSection = () => {
               <Button
                 className={`w-full h-11 font-semibold ${
                   plan.featured
-                    ? "gradient-primary text-white border-0 hover:opacity-90 shadow-[0_4px_16px_hsla(265,82%,44%,0.25)]"
+                    ? "gradient-primary text-white border-0 hover:opacity-90 shadow-[0_4px_16px_hsla(225,84%,55%,0.25)]"
                     : "bg-muted/60 text-foreground border border-border/50 hover:bg-muted"
                 }`}
                 variant={plan.featured ? "default" : "outline"}

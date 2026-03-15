@@ -19,7 +19,7 @@ const wcagCriteria = [
   {
     category: "Çalıştırılabilirlik",
     level: "Seviye A & AA",
-    color: "from-emerald-500 to-teal-500",
+    color: "from-blue-500 to-cyan-500",
     items: [
       { code: "2.1.1", title: "Klavye Erişimi", desc: "Gelişmiş klavye navigasyonu, akıllı navigasyon", met: true },
       { code: "2.2.2", title: "Duraklatma/Durdurma", desc: "Animasyonları durdurma özelliği", met: true },

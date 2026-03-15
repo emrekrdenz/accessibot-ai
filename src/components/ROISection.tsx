@@ -1,27 +1,27 @@
-import { TrendingUp, Users, Search } from "lucide-react";
+import { ArrowUpRight, UsersRound, Globe } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
   {
-    icon: Users,
+    icon: UsersRound,
     value: "4.8M+",
     label: "Engelli Birey",
     desc: "Türkiye'de erişilebilir sitelere ihtiyaç duyan potansiyel kullanıcı",
-    gradient: "from-blue-400 to-cyan-400",
+    gradient: "from-blue-400 to-indigo-400",
   },
   {
-    icon: TrendingUp,
+    icon: ArrowUpRight,
     value: "%30",
     label: "Dönüşüm Artışı",
     desc: "Erişilebilir web sitelerinin ortalama dönüşüm oranı artışı",
-    gradient: "from-violet-400 to-purple-400",
+    gradient: "from-amber-400 to-orange-400",
   },
   {
-    icon: Search,
+    icon: Globe,
     value: "%15",
     label: "SEO İyileşmesi",
     desc: "Erişilebilirlik optimizasyonunun organik trafiğe etkisi",
-    gradient: "from-emerald-400 to-teal-400",
+    gradient: "from-rose-400 to-pink-400",
   },
 ];
 

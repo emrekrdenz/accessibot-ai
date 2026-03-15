@@ -220,7 +220,7 @@ const HeroMockup = () => {
                   <div className="h-2 w-3/5 bg-muted-foreground/20 rounded" />
                   <div className="flex gap-1.5 mt-1.5">
                     <div className="h-5 w-14 rounded gradient-primary" />
-                    <div className="h-5 w-14 rounded bg-green-500" />
+                    <div className="h-5 w-14 rounded bg-blue-500" />
                   </div>
                 </div>
                 <div className="flex items-center justify-center bg-gradient-to-br from-orange-300/40 to-blue-400/40 rounded-lg min-h-[100px]">
@@ -231,7 +231,7 @@ const HeroMockup = () => {
               <div className="grid grid-cols-3 gap-2">
                 {[
                   { bg: "from-blue-400/30 to-purple-400/30", bar: "bg-blue-500" },
-                  { bg: "from-green-400/30 to-teal-400/30", bar: "bg-green-500" },
+                  { bg: "from-blue-400/30 to-indigo-400/30", bar: "bg-blue-500" },
                   { bg: "from-orange-400/30 to-red-400/30", bar: "bg-orange-500" },
                 ].map((card, i) => (
                   <div key={i} className="bg-background/70 rounded-lg p-3 flex flex-col gap-1.5">
@@ -247,7 +247,7 @@ const HeroMockup = () => {
             {getBackgroundDemo()}
 
             {/* Floating accessibility panel */}
-            <div className="absolute top-1/2 right-16 -translate-y-1/2 bg-background rounded-2xl p-6 shadow-[0_20px_60px_hsla(265,82%,44%,0.25)] w-[440px] z-20">
+            <div className="absolute top-1/2 right-16 -translate-y-1/2 bg-background rounded-2xl p-6 shadow-[0_20px_60px_hsla(225,84%,55%,0.25)] w-[440px] z-20">
               <div className="flex items-center gap-2.5 mb-5 font-bold text-foreground">
                 <Accessibility className="w-5 h-5 text-primary" />
                 <span>Erişilebilirlik Ayarları</span>
@@ -273,7 +273,7 @@ const HeroMockup = () => {
 
             {/* Floating trigger */}
             <div 
-              className={`absolute bottom-8 right-8 w-14 h-14 gradient-primary rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_hsla(265,82%,44%,0.4)] cursor-pointer z-20 ${activeEffect === "no-animation" ? "" : "animate-pulse"}`}
+              className={`absolute bottom-8 right-8 w-14 h-14 gradient-primary rounded-full flex items-center justify-center text-white shadow-[0_8px_24px_hsla(225,84%,55%,0.4)] cursor-pointer z-20 ${activeEffect === "no-animation" ? "" : "animate-pulse"}`}
               onClick={() => setActiveEffect("cursor")}
             >
               <Accessibility className="w-6 h-6" />

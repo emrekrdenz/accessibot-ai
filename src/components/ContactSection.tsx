@@ -71,7 +71,7 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border/50 p-8 space-y-5 shadow-[0_8px_40px_hsla(265,82%,44%,0.04)]">
+          <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border/50 p-8 space-y-5 shadow-[0_8px_40px_hsla(225,84%,55%,0.04)]">
             <div>
               <label htmlFor="name" className="text-sm font-semibold text-foreground mb-2 block">Ad Soyad</label>
               <Input id="name" placeholder="Adınızı girin" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="h-11 bg-muted/30 border-border/50 focus:border-primary/30" />
@@ -88,7 +88,7 @@ const ContactSection = () => {
               <label htmlFor="message" className="text-sm font-semibold text-foreground mb-2 block">Mesajınız</label>
               <Textarea id="message" rows={4} placeholder="Erişilebilirlik ihtiyaçlarınızı açıklayın..." required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} className="bg-muted/30 border-border/50 focus:border-primary/30" />
             </div>
-            <Button type="submit" className="w-full gradient-primary text-white border-0 hover:opacity-90 h-12 font-semibold shadow-[0_4px_16px_hsla(265,82%,44%,0.25)]">
+            <Button type="submit" className="w-full gradient-primary text-white border-0 hover:opacity-90 h-12 font-semibold shadow-[0_4px_16px_hsla(225,84%,55%,0.25)]">
               Ücretsiz Değerlendirme Talep Et
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

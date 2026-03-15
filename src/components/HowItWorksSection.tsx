@@ -1,37 +1,37 @@
-import { UserPlus, Code, Sparkles, Clock, Wrench, Monitor, ArrowRight } from "lucide-react";
+import { UserRoundPlus, SquareTerminal, Workflow, Timer, Puzzle, ScreenShare, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const steps = [
   {
     number: "1",
-    icon: UserPlus,
+    icon: UserRoundPlus,
     title: "Hesap Oluşturun",
     desc: "30 saniyede ücretsiz hesap oluşturun. Kredi kartı gerekmez.",
     detail: "E-posta ile kayıt → Plan seçimi → Hazır",
-    color: "from-violet-500 to-purple-600",
-  },
-  {
-    number: "2",
-    icon: Code,
-    title: "Tek Satır Kod Ekleyin",
-    desc: "Size verilen JavaScript kodunu sitenizin <head> bölümüne yapıştırın.",
-    detail: '<script src="cdn.ike.com.tr/widget.js" async>',
     color: "from-blue-500 to-indigo-600",
   },
   {
+    number: "2",
+    icon: SquareTerminal,
+    title: "Tek Satır Kod Ekleyin",
+    desc: "Size verilen JavaScript kodunu sitenizin <head> bölümüne yapıştırın.",
+    detail: '<script src="cdn.ike.com.tr/widget.js" async>',
+    color: "from-amber-500 to-orange-600",
+  },
+  {
     number: "3",
-    icon: Sparkles,
+    icon: Workflow,
     title: "AI Taramayı Başlatın",
     desc: "AI motorumuz sitenizi tarar, eksiklikleri tespit eder ve widget aktif olur.",
     detail: "Otomatik WCAG taraması → Widget aktif → Raporlama başlar",
-    color: "from-emerald-500 to-teal-600",
+    color: "from-rose-500 to-pink-600",
   },
 ];
 
 const trustPoints = [
-  { icon: Clock, text: "Ortalama kurulum: 5 dakika" },
-  { icon: Wrench, text: "Teknik bilgi gerektirmez" },
-  { icon: Monitor, text: "Sitenizde değişiklik yapmaz" },
+  { icon: Timer, text: "Ortalama kurulum: 5 dakika" },
+  { icon: Puzzle, text: "Teknik bilgi gerektirmez" },
+  { icon: ScreenShare, text: "Sitenizde değişiklik yapmaz" },
 ];
 
 const HowItWorksSection = () => {
@@ -52,11 +52,11 @@ const HowItWorksSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14 relative">
           {/* Connection line (desktop) */}
-          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-emerald-500/20" />
+          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-indigo-500/20" />
 
           {steps.map((step) => (
             <div key={step.number} className="text-center relative">
-              <div className="bg-card rounded-2xl p-8 border border-border/50 hover:border-primary/20 hover:shadow-[0_12px_40px_hsla(265,82%,44%,0.08)] transition-all duration-300 h-full">
+              <div className="bg-card rounded-2xl p-8 border border-border/50 hover:border-primary/20 hover:shadow-[0_12px_40px_hsla(225,84%,55%,0.08)] transition-all duration-300 h-full">
                 <div className={`w-14 h-14 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center text-white font-bold text-lg mx-auto mb-6 shadow-lg relative z-10`}>
                   {step.number}
                 </div>
@@ -83,7 +83,7 @@ const HowItWorksSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="gradient-primary text-white border-0 hover:opacity-90 text-base px-8 h-12 shadow-[0_4px_20px_hsla(265,82%,44%,0.3)]">
+          <Button size="lg" className="gradient-primary text-white border-0 hover:opacity-90 text-base px-8 h-12 shadow-[0_4px_20px_hsla(225,84%,55%,0.3)]">
             Ücretsiz Deneyin
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

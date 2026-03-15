@@ -1,92 +1,92 @@
 import { useState } from "react";
 import {
-  Eye, SlidersHorizontal, Keyboard, Volume2, VolumeX,
-  LinkIcon, Monitor, Type, PauseCircle, Palette,
-  Zap, Search, ShieldCheck, Gauge, EyeOff,
-  Sun, BookOpen, MousePointer, Hand,
-  ImageOff, AlignLeft, Mic, ScanEye, Glasses
+  AArrowUp, Contrast, Navigation, AudioLines, VolumeX, Volume2,
+  Link2, CircleOff, ALargeSmall, CirclePause, Blend,
+  Gauge, ShieldCheck, EyeOff,
+  SunDim, BookOpenText, MousePointerClick, MousePointer, Pipette, Crosshair,
+  ImageOff, WrapText, MicVocal, ZoomIn, BookA
 } from "lucide-react";
 
 const features = [
   {
-    icon: Eye,
+    icon: AArrowUp,
     title: "Yazı Boyutu Ayarı (%80-200)",
     desc: "Metin boyutunu %80'den %200'e kadar kullanıcı ihtiyaçlarına göre ayarlama",
     benefit: "WCAG 1.4.4 — Görme zorluğu yaşayanlar için içeriği okunabilir hale getirir",
     demo: "text-resize",
   },
   {
-    icon: SlidersHorizontal,
+    icon: Contrast,
     title: "5 Farklı Kontrast Modu",
     desc: "Yüksek, karanlık, aydınlık, düşük ve normal kontrast modları arasında geçiş",
     benefit: "WCAG 1.4.3 — Her kullanıcıya uygun kontrast seviyesi sunar",
     demo: "contrast",
   },
   {
-    icon: Glasses,
+    icon: Blend,
     title: "Renk Körlüğü Filtreleri",
     desc: "Protanopi, Deuteranopi ve Tritanopi için özel renk filtreleri",
     benefit: "WCAG 1.4.1 — Dünya nüfusunun %8'ini etkileyen renk körlüğüne çözüm",
     demo: "colorblind",
   },
   {
-    icon: Keyboard,
+    icon: Navigation,
     title: "Gelişmiş Klavye Navigasyonu",
     desc: "Tüm site içeriğine sadece klavye ile erişim ve akıllı navigasyon modu",
     benefit: "WCAG 2.1.1 — Motor engelli kullanıcıların fare olmadan gezinmesini sağlar",
     demo: "keyboard",
   },
   {
-    icon: Volume2,
+    icon: AudioLines,
     title: "Metinden Sese (TTS)",
     desc: "Web Speech API ile sayfa içeriğini sesli okuma, hız kontrolü ve kelime vurgulama",
     benefit: "Görme engelli kullanıcılar içeriğe sesli olarak erişir",
     demo: "screen-reader",
   },
   {
-    icon: Type,
+    icon: ALargeSmall,
     title: "Disleksi Dostu Font",
     desc: "OpenDyslexic font, artırılmış harf/kelime aralığı ve sola hizalama",
     benefit: "WCAG 3.1 — Disleksi sorunu yaşayanlar metinleri daha rahat okur",
     demo: "dyslexia",
   },
   {
-    icon: LinkIcon,
+    icon: Link2,
     title: "Link & Buton Vurgulama",
     desc: "Tüm bağlantıları ve butonları sayfada belirgin şekilde işaretleme",
     benefit: "WCAG 2.4.4 — Tıklanabilir öğeleri kolayca tanımayı sağlar",
     demo: "link-highlight",
   },
   {
-    icon: Monitor,
+    icon: CircleOff,
     title: "Renk Filtreleri",
     desc: "Ters çevirme, gri tonlama, yüksek/düşük doygunluk filtreleri",
     benefit: "WCAG 1.4.8 — Farklı görsel ihtiyaçlara uyum sağlar",
     demo: "grayscale",
   },
   {
-    icon: PauseCircle,
+    icon: CirclePause,
     title: "Animasyonları Durdurma",
     desc: "Tüm CSS animasyonlarını ve geçişleri devre dışı bırakma",
     benefit: "WCAG 2.3.1 — Epilepsi ve hareket hassasiyeti olan kullanıcıları korur",
     demo: "stop-animation",
   },
   {
-    icon: BookOpen,
+    icon: BookOpenText,
     title: "Okuma Maskesi & Satır Kılavuzu",
     desc: "Spotlight okuma maskesi ve satır takip eden görsel rehber çizgisi",
     benefit: "DEHB ve disleksi yaşayan kullanıcıların odaklanmasını artırır",
     demo: "reading-mask",
   },
   {
-    icon: MousePointer,
+    icon: MousePointerClick,
     title: "Büyük İmleç & Vurgulama",
     desc: "Büyük beyaz/siyah imleç seçenekleri ve imleç çevresi vurgulama",
     benefit: "WCAG 2.4.7 — Düşük görüşlü kullanıcılar imleci kolayca takip eder",
     demo: "cursor",
   },
   {
-    icon: AlignLeft,
+    icon: WrapText,
     title: "Satır & Harf Aralığı Kontrolü",
     desc: "Satır yüksekliği (%100-250), harf aralığı (0-5px), kelime aralığı (0-10px)",
     benefit: "WCAG 1.4.12 — Metin aralıkları bilişsel erişilebilirliği artırır",
@@ -100,21 +100,21 @@ const features = [
     demo: "mute",
   },
   {
-    icon: Palette,
+    icon: Pipette,
     title: "Özel Metin & Arka Plan Rengi",
     desc: "Kullanıcılar kendi metin ve arka plan renklerini seçebilir",
     benefit: "WCAG 1.4.8 — Kişiye özel renk kombinasyonları ile okunabilirlik",
     demo: "custom-colors",
   },
   {
-    icon: Hand,
+    icon: Crosshair,
     title: "Odak & Hover Vurgulama",
     desc: "Odaklanan ve üzerine gelinen öğeleri görsel olarak vurgulama",
     benefit: "WCAG 2.4.7 — Aktif öğeyi net şekilde ayırt etmeyi sağlar",
     demo: "focus",
   },
   {
-    icon: ScanEye,
+    icon: ZoomIn,
     title: "Metin Büyüteç",
     desc: "İmleç yakınındaki metni anlık büyüten hover büyüteç",
     benefit: "Düşük görüşlü kullanıcılar için detaylı metin inceleme imkanı",
@@ -128,21 +128,21 @@ const features = [
     demo: "hide-images",
   },
   {
-    icon: Sun,
+    icon: SunDim,
     title: "Parlaklık Kontrolü",
     desc: "%70, %100 ve %130 parlaklık seviyeleri arasında ayarlama",
     benefit: "Işığa hassas kullanıcılar için ekran parlaklığını kontrol eder",
     demo: "brightness",
   },
   {
-    icon: Mic,
+    icon: MicVocal,
     title: "Sesli Komutlar",
     desc: "Ses tanıma ile widget'ı ve sayfayı sesli kontrol etme",
     benefit: "Motor engelli kullanıcılar el kullanmadan web'de gezinebilir",
     demo: "voice",
   },
   {
-    icon: Search,
+    icon: BookA,
     title: "Sözlük",
     desc: "Çift tıklama ile kelime anlamını gösteren pop-up sözlük",
     benefit: "Bilişsel engelli kullanıcılar için kelime anlamlarına hızlı erişim",
@@ -151,7 +151,7 @@ const features = [
 ];
 
 const techInfo = [
-  { icon: Zap, text: "Site hızına etkisi yok" },
+  { icon: CirclePause, text: "Site hızına etkisi yok" },
   { icon: Gauge, text: "Core Web Vitals uyumlu" },
   { icon: EyeOff, text: "prefers-reduced-motion desteği" },
   { icon: ShieldCheck, text: "KVKK & GDPR uyumlu" },
@@ -167,7 +167,7 @@ const FeatureDemo = ({ type }: { type: string }) => {
           <div className="text-xl font-bold text-primary leading-tight">Aa — %200</div>
           <div className="flex items-center gap-1 mt-1">
             {[20, 40, 60, 80, 100].map((w) => (
-              <div key={w} className="h-1 flex-1 rounded-full" style={{ backgroundColor: `hsl(265 82% ${100 - w / 2}%)` }} />
+              <div key={w} className="h-1 flex-1 rounded-full" style={{ backgroundColor: `hsl(225 84% ${100 - w / 2}%)` }} />
             ))}
           </div>
         </div>
@@ -273,7 +273,7 @@ const FeatureDemo = ({ type }: { type: string }) => {
           </div>
           <span className="text-muted-foreground text-sm">→</span>
           <div className="text-center">
-            <PauseCircle className="w-5 h-5 text-primary mx-auto mb-1" />
+            <CirclePause className="w-5 h-5 text-primary mx-auto mb-1" />
             <span className="text-[7px] text-primary font-medium">Kapalı</span>
           </div>
         </div>
@@ -314,7 +314,7 @@ const FeatureDemo = ({ type }: { type: string }) => {
       return (
         <div className="flex items-center justify-center h-10">
           <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Zap className="w-4 h-4 text-primary" />
+            <Gauge className="w-4 h-4 text-primary" />
           </div>
         </div>
       );
@@ -328,12 +328,12 @@ const FeatureCard = ({ feature }: { feature: typeof features[0] }) => {
     <div
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative bg-card rounded-2xl border border-border/50 p-5 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(265,82%,44%,0.08)] overflow-hidden"
+      className="group relative bg-card rounded-2xl border border-border/50 p-5 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(225,84%,55%,0.08)] overflow-hidden"
     >
       <div className="absolute -top-16 -right-16 w-40 h-40 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       <div className="relative">
-        <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center mb-3 shadow-[0_4px_12px_hsla(265,82%,44%,0.2)]">
+        <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center mb-3 shadow-[0_4px_12px_hsla(225,84%,55%,0.2)]">
           <feature.icon className="w-5 h-5 text-white" />
         </div>
         <h3 className="text-sm font-bold text-foreground mb-1.5">{feature.title}</h3>

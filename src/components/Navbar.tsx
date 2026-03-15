@@ -58,7 +58,7 @@ const Navbar = () => {
           >
             Giriş Yap
           </Button>
-          <Button className="gradient-primary text-white border-0 hover:opacity-90 shadow-[0_4px_16px_hsla(265,82%,44%,0.3)] text-sm h-10 px-6">
+          <Button className="gradient-primary text-white border-0 hover:opacity-90 shadow-[0_4px_16px_hsla(225,84%,55%,0.3)] text-sm h-10 px-6">
             Ücretsiz Deneyin
           </Button>
         </div>

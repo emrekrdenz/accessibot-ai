@@ -36,7 +36,7 @@ const StandardsSection = () => {
           {standards.map((s) => (
             <div
               key={s.title}
-              className="bg-card p-7 rounded-2xl text-center border-2 border-transparent hover:-translate-y-1 hover:border-primary hover:shadow-[0_10px_30px_hsla(265,82%,44%,0.1)] transition-all"
+              className="bg-card p-7 rounded-2xl text-center border-2 border-transparent hover:-translate-y-1 hover:border-primary hover:shadow-[0_10px_30px_hsla(225,84%,55%,0.1)] transition-all"
             >
               <div className="w-14 h-14 rounded-full gradient-primary flex items-center justify-center mx-auto mb-4">
                 <s.icon className="w-6 h-6 text-white" />

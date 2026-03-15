@@ -1,4 +1,4 @@
-import { ArrowRight, Shield, Clock, Zap, Code } from "lucide-react";
+import { ArrowRight, ShieldCheck, Timer, Blocks, Terminal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import HeroMockup from "./HeroMockup";
@@ -7,14 +7,14 @@ const HeroSection = () => {
   const trustBadges = [
     { label: "WCAG 2.1", color: "bg-primary/10 text-primary border-primary/20" },
     { label: "ADA", color: "bg-secondary/10 text-secondary border-secondary/20" },
-    { label: "EAA 2025", color: "bg-accent/10 text-accent-foreground border-accent/20" },
-    { label: "EN 301 549", color: "bg-primary/10 text-primary border-primary/20" },
+    { label: "EAA 2025", color: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20" },
+    { label: "EN 301 549", color: "bg-teal-500/10 text-teal-600 border-teal-500/20" },
   ];
 
   const microTrust = [
-    { icon: Clock, text: "Kurulum 5 dakika" },
-    { icon: Zap, text: "58+ erişilebilirlik özelliği" },
-    { icon: Code, text: "Tek satır kod" },
+    { icon: Timer, text: "Kurulum 5 dakika" },
+    { icon: Blocks, text: "58+ erişilebilirlik özelliği" },
+    { icon: Terminal, text: "Tek satır kod" },
   ];
 
   return (
@@ -23,9 +23,9 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Text */}
           <div className="relative z-10">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-primary/5 border border-primary/15">
-              <Shield className="w-4 h-4 text-primary" />
-              <span className="text-sm font-semibold text-primary">EAA 2025 yürürlüğe giriyor — hazır mısınız?</span>
+            <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-secondary/5 border border-secondary/15">
+              <ShieldCheck className="w-4 h-4 text-secondary" />
+              <span className="text-sm font-semibold text-secondary">EAA 2025 yürürlüğe giriyor — hazır mısınız?</span>
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-extrabold text-foreground leading-tight mb-6">

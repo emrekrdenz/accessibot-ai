@@ -1,8 +1,8 @@
-import { Scale, Users, Globe, TrendingUp } from "lucide-react";
+import { Gavel, UserX, Landmark, BarChart3 } from "lucide-react";
 
 const problems = [
   {
-    icon: Scale,
+    icon: Gavel,
     title: "EAA 2025 Yürürlükte",
     desc: "Avrupa Erişilebilirlik Yasası yürürlüğe girdi. Uyumsuz web siteleri yasal yaptırımlarla karşı karşıya.",
     stat: "28 Haziran 2025",
@@ -11,31 +11,31 @@ const problems = [
     bgGlow: "bg-red-500/10",
   },
   {
-    icon: Users,
+    icon: UserX,
     title: "Müşteri Kaybı Riski",
     desc: "Dünya nüfusunun %15'i bir engelle yaşıyor. Erişilebilir olmayan siteniz büyük bir kitleyi kaybediyor.",
     stat: "%15",
     statLabel: "Dünya nüfusu",
-    gradient: "from-orange-500 to-amber-500",
-    bgGlow: "bg-orange-500/10",
-  },
-  {
-    icon: Globe,
-    title: "5378 Sayılı Kanun",
-    desc: "Türkiye'de kamu ve özel sektör web siteleri erişilebilir olmak zorunda. İhlal durumunda idari para cezası uygulanıyor.",
-    stat: "₺200K+",
-    statLabel: "Ortalama ceza",
     gradient: "from-amber-500 to-yellow-500",
     bgGlow: "bg-amber-500/10",
   },
   {
-    icon: TrendingUp,
+    icon: Landmark,
+    title: "5378 Sayılı Kanun",
+    desc: "Türkiye'de kamu ve özel sektör web siteleri erişilebilir olmak zorunda. İhlal durumunda idari para cezası uygulanıyor.",
+    stat: "₺200K+",
+    statLabel: "Ortalama ceza",
+    gradient: "from-orange-500 to-red-400",
+    bgGlow: "bg-orange-500/10",
+  },
+  {
+    icon: BarChart3,
     title: "Artan Erişilebilirlik Davaları",
     desc: "Dünya genelinde erişilebilirlik davaları yılda %30 artıyor. Proaktif çözüm çok daha düşük maliyetlidir.",
     stat: "%30",
     statLabel: "Yıllık artış",
-    gradient: "from-purple-500 to-violet-500",
-    bgGlow: "bg-purple-500/10",
+    gradient: "from-rose-500 to-pink-500",
+    bgGlow: "bg-rose-500/10",
   },
 ];
 
@@ -44,8 +44,8 @@ const ProblemSection = () => {
     <section className="py-28 bg-background relative section-glow">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[2px] uppercase text-primary mb-5 bg-primary/5 px-5 py-2.5 rounded-full border border-primary/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+          <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[2px] uppercase text-secondary mb-5 bg-secondary/5 px-5 py-2.5 rounded-full border border-secondary/10">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
             Neden Erişilebilirlik?
           </div>
           <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-foreground mb-5 leading-tight">
@@ -61,9 +61,8 @@ const ProblemSection = () => {
           {problems.map((problem) => (
             <div
               key={problem.title}
-              className="group relative bg-card rounded-2xl border border-border/60 p-7 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_8px_40px_hsla(265,82%,44%,0.08)] overflow-hidden"
+              className="group relative bg-card rounded-2xl border border-border/60 p-7 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_8px_40px_hsla(225,84%,55%,0.06)] overflow-hidden"
             >
-              {/* Background glow */}
               <div className={`absolute -top-12 -right-12 w-32 h-32 ${problem.bgGlow} rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
               <div className="relative flex gap-5">
