@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const plans = [
   {
     name: "Başlangıç",
-    monthlyPrice: 499,
+    monthlyPrice: 999,
     yearlyPrice: 399,
     desc: "Küçük ölçekli web siteleri için",
     features: [
@@ -22,7 +22,7 @@ const plans = [
   },
   {
     name: "Profesyonel",
-    monthlyPrice: 999,
+    monthlyPrice: 2399,
     yearlyPrice: 799,
     desc: "Orta ve büyük ölçekli siteler için",
     features: [
