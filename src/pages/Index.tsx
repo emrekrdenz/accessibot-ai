@@ -7,7 +7,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import SimulationSection from "@/components/SimulationSection";
 import StatisticsSection from "@/components/StatisticsSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
-import IntegrationSection from "@/components/IntegrationSection";
+
 import SocialProofSection from "@/components/SocialProofSection";
 import PricingSection from "@/components/PricingSection";
 import ROISection from "@/components/ROISection";
@@ -28,7 +28,7 @@ const Index = () => {
         <SimulationSection />
         <StatisticsSection />
         <HowItWorksSection />
-        <IntegrationSection />
+
         <SocialProofSection />
         <PricingSection />
         <ROISection />

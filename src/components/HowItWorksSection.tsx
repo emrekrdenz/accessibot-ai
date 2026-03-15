@@ -33,7 +33,7 @@ const trustPoints = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="py-24 bg-background">
+    <section className="pt-10 pb-24 bg-background">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-block text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">

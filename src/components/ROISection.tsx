@@ -1,5 +1,4 @@
-import { TrendingUp, Users, Scale, Search, ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TrendingUp, Users, Search } from "lucide-react";
 
 const stats = [
   {
@@ -20,12 +19,6 @@ const stats = [
     label: "SEO İyileşmesi",
     desc: "Erişilebilirlik optimizasyonunun organik trafiğe etkisi",
   },
-  {
-    icon: Scale,
-    value: "₺200K+",
-    label: "Dava Maliyeti",
-    desc: "Uyumsuzluk durumunda karşılaşılabilecek ortalama yasal maliyet",
-  },
 ];
 
 const ROISection = () => {
@@ -44,7 +37,7 @@ const ROISection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
           {stats.map((stat) => (
             <div
               key={stat.label}
@@ -58,13 +51,6 @@ const ROISection = () => {
               <p className="text-xs text-white/40 leading-relaxed">{stat.desc}</p>
             </div>
           ))}
-        </div>
-
-        <div className="text-center">
-          <Button size="lg" className="bg-white text-foreground hover:bg-white/90 text-base px-8 h-12 font-semibold">
-            Ücretsiz ROI Hesaplayıcı
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
         </div>
       </div>
     </section>

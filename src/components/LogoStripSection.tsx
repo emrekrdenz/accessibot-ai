@@ -1,6 +1,6 @@
 const logos = [
-  "Türk Telekom", "Garanti BBVA", "Hepsiburada", "Anadolu Efes",
-  "THY", "Sabancı", "Koç Holding", "İş Bankası",
+  "runRafi", "Testinium", "Loadium",
+  "Oobeya", "Experilabs", "theRafi", "hiRafi",
 ];
 
 const LogoStripSection = () => {
