@@ -16,7 +16,10 @@
       "Bash(grep -r \"<nav\\\\|<h1\\\\|<h2\\\\|<h3\\\\|<h4\\\\|role=\"\"navigation\"\"\" /Users/testinium/Desktop/isler/accessibot-ai/src/components/ --include=*.tsx)",
       "Bash(find '/Users/testinium/Desktop/isler/wcag widget/frontend/src' -type f -name *widget* -o -name *accessibility*)",
       "Bash(xargs sed:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(npx gh-pages:*)",
+      "Bash(gh api:*)",
+      "Bash(git fetch:*)"
     ]
   }
 }

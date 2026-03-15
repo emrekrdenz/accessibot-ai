@@ -7,21 +7,21 @@ const stats = [
     value: "4.8M+",
     label: "Engelli Birey",
     desc: "Türkiye'de erişilebilir sitelere ihtiyaç duyan potansiyel kullanıcı",
-    gradient: "from-blue-400 to-indigo-400",
+    gradient: "from-primary to-primary/70",
   },
   {
     icon: ArrowUpRight,
     value: "%30",
     label: "Dönüşüm Artışı",
     desc: "Erişilebilir web sitelerinin ortalama dönüşüm oranı artışı",
-    gradient: "from-amber-400 to-orange-400",
+    gradient: "from-primary to-primary/70",
   },
   {
     icon: Globe,
     value: "%15",
     label: "SEO İyileşmesi",
     desc: "Erişilebilirlik optimizasyonunun organik trafiğe etkisi",
-    gradient: "from-rose-400 to-pink-400",
+    gradient: "from-primary to-primary/70",
   },
 ];
 
@@ -39,7 +39,7 @@ const ROISection = () => {
   }, []);
 
   return (
-    <section className="py-28 gradient-dark text-white relative overflow-hidden">
+    <section className="py-16 sm:py-28 gradient-dark text-white relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-[100px]" />

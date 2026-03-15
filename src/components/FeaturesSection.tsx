@@ -359,7 +359,7 @@ const FeatureCard = ({ feature }: { feature: typeof features[0] }) => {
 
 const FeaturesSection = () => {
   return (
-    <section id="features" className="py-28 bg-background relative section-glow">
+    <section id="features" className="py-16 sm:py-28 bg-background relative section-glow">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
@@ -381,7 +381,7 @@ const FeaturesSection = () => {
           ))}
         </div>
 
-        <div className="bg-muted/40 rounded-2xl p-8 border border-border/50">
+        <div className="bg-muted/40 rounded-2xl p-5 sm:p-8 border border-border/50">
           <h3 className="text-sm font-bold text-foreground mb-6 text-center tracking-wide uppercase">Teknik Şeffaflık</h3>
           <div className="flex flex-wrap justify-center gap-x-8 gap-y-4">
             {techInfo.map((item) => (

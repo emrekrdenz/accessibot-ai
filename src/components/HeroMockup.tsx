@@ -177,7 +177,7 @@ const HeroMockup = () => {
   };
 
   return (
-    <div className={activeEffect === "no-animation" ? "" : "animate-float"}>
+    <div className={`hidden lg:block ${activeEffect === "no-animation" ? "" : "animate-float"}`}>
       <div className="relative max-w-[1100px] mx-auto">
         {/* Browser frame */}
         <div className="bg-background rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.15)] overflow-hidden relative z-10">
@@ -223,16 +223,16 @@ const HeroMockup = () => {
                     <div className="h-5 w-14 rounded bg-blue-500" />
                   </div>
                 </div>
-                <div className="flex items-center justify-center bg-gradient-to-br from-orange-300/40 to-blue-400/40 rounded-lg min-h-[100px]">
-                  <div className="w-10 h-10 rounded-full bg-red-400/60" />
+                <div className="flex items-center justify-center bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg min-h-[100px]">
+                  <div className="w-10 h-10 rounded-full bg-primary/20" />
                 </div>
               </div>
               {/* Mini cards */}
               <div className="grid grid-cols-3 gap-2">
                 {[
-                  { bg: "from-blue-400/30 to-purple-400/30", bar: "bg-blue-500" },
-                  { bg: "from-blue-400/30 to-indigo-400/30", bar: "bg-blue-500" },
-                  { bg: "from-orange-400/30 to-red-400/30", bar: "bg-orange-500" },
+                  { bg: "from-primary/15 to-primary/5", bar: "bg-primary" },
+                  { bg: "from-primary/10 to-primary/5", bar: "bg-primary" },
+                  { bg: "from-primary/15 to-primary/10", bar: "bg-primary" },
                 ].map((card, i) => (
                   <div key={i} className="bg-background/70 rounded-lg p-3 flex flex-col gap-1.5">
                     <div className={`w-6 h-6 rounded bg-gradient-to-br ${card.bg}`} />

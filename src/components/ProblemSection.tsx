@@ -7,8 +7,8 @@ const problems = [
     desc: "Avrupa Erişilebilirlik Yasası yürürlüğe girdi. Uyumsuz web siteleri yasal yaptırımlarla karşı karşıya.",
     stat: "28 Haziran 2025",
     statLabel: "Son tarih",
-    gradient: "from-red-500 to-orange-500",
-    bgGlow: "bg-red-500/10",
+    gradient: "from-slate-700 to-slate-900",
+    bgGlow: "bg-primary/5",
   },
   {
     icon: UserX,
@@ -16,8 +16,8 @@ const problems = [
     desc: "Dünya nüfusunun %15'i bir engelle yaşıyor. Erişilebilir olmayan siteniz büyük bir kitleyi kaybediyor.",
     stat: "%15",
     statLabel: "Dünya nüfusu",
-    gradient: "from-amber-500 to-yellow-500",
-    bgGlow: "bg-amber-500/10",
+    gradient: "from-slate-700 to-slate-900",
+    bgGlow: "bg-primary/5",
   },
   {
     icon: Landmark,
@@ -25,8 +25,8 @@ const problems = [
     desc: "Türkiye'de kamu ve özel sektör web siteleri erişilebilir olmak zorunda. İhlal durumunda idari para cezası uygulanıyor.",
     stat: "₺200K+",
     statLabel: "Ortalama ceza",
-    gradient: "from-orange-500 to-red-400",
-    bgGlow: "bg-orange-500/10",
+    gradient: "from-slate-700 to-slate-900",
+    bgGlow: "bg-primary/5",
   },
   {
     icon: BarChart3,
@@ -34,14 +34,14 @@ const problems = [
     desc: "Dünya genelinde erişilebilirlik davaları yılda %30 artıyor. Proaktif çözüm çok daha düşük maliyetlidir.",
     stat: "%30",
     statLabel: "Yıllık artış",
-    gradient: "from-rose-500 to-pink-500",
-    bgGlow: "bg-rose-500/10",
+    gradient: "from-slate-700 to-slate-900",
+    bgGlow: "bg-primary/5",
   },
 ];
 
 const ProblemSection = () => {
   return (
-    <section className="py-28 bg-background relative section-glow">
+    <section className="py-16 sm:py-28 bg-background relative section-glow">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[2px] uppercase text-secondary mb-5 bg-secondary/5 px-5 py-2.5 rounded-full border border-secondary/10">
@@ -73,7 +73,7 @@ const ProblemSection = () => {
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <h3 className="font-bold text-foreground text-[15px]">{problem.title}</h3>
                     <div className="text-right flex-shrink-0">
-                      <div className={`text-lg font-extrabold bg-gradient-to-r ${problem.gradient} bg-clip-text text-transparent leading-none`}>
+                      <div className="text-lg font-extrabold text-primary leading-none">
                         {problem.stat}
                       </div>
                       <div className="text-[10px] text-muted-foreground mt-0.5">{problem.statLabel}</div>

@@ -16,7 +16,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-28 bg-background relative section-glow">
+    <section id="contact" className="py-16 sm:py-28 bg-background relative section-glow">
       <div className="container">
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
           {/* Info */}
@@ -71,7 +71,7 @@ const ContactSection = () => {
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border/50 p-8 space-y-5 shadow-[0_8px_40px_hsla(225,84%,55%,0.04)]">
+          <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border/50 p-5 sm:p-8 space-y-5 shadow-[0_8px_40px_hsla(225,84%,55%,0.04)]">
             <div>
               <label htmlFor="name" className="text-sm font-semibold text-foreground mb-2 block">Ad Soyad</label>
               <Input id="name" placeholder="Adınızı girin" required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} className="h-11 bg-muted/30 border-border/50 focus:border-primary/30" />

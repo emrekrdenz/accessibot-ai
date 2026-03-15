@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 mb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-14">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <p className="text-2xl font-extrabold mb-3 tracking-tight">

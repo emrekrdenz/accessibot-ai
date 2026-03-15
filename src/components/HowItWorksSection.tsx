@@ -8,7 +8,7 @@ const steps = [
     title: "Hesap Oluşturun",
     desc: "30 saniyede ücretsiz hesap oluşturun. Kredi kartı gerekmez.",
     detail: "E-posta ile kayıt → Plan seçimi → Hazır",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-primary to-primary/80",
   },
   {
     number: "2",
@@ -16,7 +16,7 @@ const steps = [
     title: "Tek Satır Kod Ekleyin",
     desc: "Size verilen JavaScript kodunu sitenizin <head> bölümüne yapıştırın.",
     detail: '<script src="cdn.ike.com.tr/widget.js" async>',
-    color: "from-amber-500 to-orange-600",
+    color: "from-primary to-primary/80",
   },
   {
     number: "3",
@@ -24,7 +24,7 @@ const steps = [
     title: "AI Taramayı Başlatın",
     desc: "AI motorumuz sitenizi tarar, eksiklikleri tespit eder ve widget aktif olur.",
     detail: "Otomatik WCAG taraması → Widget aktif → Raporlama başlar",
-    color: "from-rose-500 to-pink-600",
+    color: "from-primary to-primary/80",
   },
 ];
 
@@ -36,7 +36,7 @@ const trustPoints = [
 
 const HowItWorksSection = () => {
   return (
-    <section className="pt-10 pb-28 bg-background relative">
+    <section className="pt-10 pb-16 sm:pb-28 bg-background relative">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
@@ -52,7 +52,7 @@ const HowItWorksSection = () => {
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-14 relative">
           {/* Connection line (desktop) */}
-          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-violet-500/20 via-blue-500/20 to-indigo-500/20" />
+          <div className="hidden md:block absolute top-20 left-[20%] right-[20%] h-[2px] bg-gradient-to-r from-primary/10 via-primary/20 to-primary/10" />
 
           {steps.map((step) => (
             <div key={step.number} className="text-center relative">

@@ -10,7 +10,7 @@ const profiles = [
     icon: EyeOff,
     title: "Görme Engelli Profili",
     desc: "Düşük görüşlü kullanıcılar için optimize edilmiş deneyim",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-primary to-primary/80",
     features: [
       "%150 yazı boyutu",
       "Yüksek kontrast modu",
@@ -23,7 +23,7 @@ const profiles = [
     icon: Blend,
     title: "Renk Körü Profili",
     desc: "Renk körlüğü olan kullanıcılar için özel filtreler",
-    color: "from-blue-500 to-indigo-600",
+    color: "from-primary to-primary/80",
     features: [
       "Deuteranopi filtresi",
       "Link vurgulama",
@@ -36,7 +36,7 @@ const profiles = [
     icon: BookOpenText,
     title: "Disleksi Profili",
     desc: "Okuma zorluğu yaşayan kullanıcılar için düzenlemeler",
-    color: "from-violet-500 to-purple-600",
+    color: "from-primary to-primary/80",
     features: [
       "OpenDyslexic font",
       "%120 yazı boyutu",
@@ -49,7 +49,7 @@ const profiles = [
     icon: Focus,
     title: "DEHB Profili",
     desc: "Dikkat dağınıklığı yaşayan kullanıcılar için odak araçları",
-    color: "from-amber-500 to-orange-600",
+    color: "from-primary to-primary/80",
     features: [
       "Animasyonlar durdurulur",
       "Okuma maskesi aktif",
@@ -62,7 +62,7 @@ const profiles = [
     icon: HeartHandshake,
     title: "Yaşlı Dostu Profil",
     desc: "Yaşlı kullanıcılar için büyütülmüş ve sade arayüz",
-    color: "from-rose-500 to-pink-600",
+    color: "from-primary to-primary/80",
     features: [
       "%140 yazı boyutu",
       "Okunabilir font",
@@ -75,7 +75,7 @@ const profiles = [
     icon: ShieldAlert,
     title: "Epilepsi Güvenli Profil",
     desc: "Nöbet riski olan kullanıcılar için güvenli deneyim",
-    color: "from-cyan-500 to-blue-600",
+    color: "from-primary to-primary/80",
     features: [
       "Animasyonlar durdurulur",
       "Sesler kapatılır",
@@ -90,7 +90,7 @@ const QuickProfilesSection = () => {
   const active = profiles.find((p) => p.id === activeProfile)!;
 
   return (
-    <section className="py-28 bg-muted/30 relative">
+    <section className="py-16 sm:py-28 bg-muted/30 relative">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-14">
           <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
@@ -131,7 +131,7 @@ const QuickProfilesSection = () => {
           </div>
 
           {/* Profile detail */}
-          <div className="bg-card rounded-2xl border border-border/50 p-8 shadow-[0_8px_30px_hsla(225,84%,55%,0.05)]">
+          <div className="bg-card rounded-2xl border border-border/50 p-5 sm:p-8 shadow-[0_8px_30px_hsla(225,84%,55%,0.05)]">
             <div className="flex items-center gap-4 mb-6">
               <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${active.color} flex items-center justify-center shadow-lg`}>
                 <active.icon className="w-7 h-7 text-white" />

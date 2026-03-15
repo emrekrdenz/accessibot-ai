@@ -64,7 +64,7 @@ const PricingSection = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section id="pricing" className="py-28 bg-background relative section-glow">
+    <section id="pricing" className="py-16 sm:py-28 bg-background relative section-glow">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">
@@ -105,9 +105,9 @@ const PricingSection = () => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className={`relative bg-card rounded-2xl border p-8 transition-all duration-300 ${
+              className={`relative bg-card rounded-2xl border p-5 sm:p-8 transition-all duration-300 ${
                 plan.featured
-                  ? "border-primary/30 shadow-[0_20px_60px_hsla(225,84%,55%,0.12)] scale-[1.03] z-10"
+                  ? "border-primary/30 shadow-[0_20px_60px_hsla(225,84%,55%,0.12)] md:scale-[1.03] z-10"
                   : "border-border/50 hover:border-primary/15 hover:shadow-[0_8px_30px_hsla(225,84%,55%,0.06)]"
               }`}
             >

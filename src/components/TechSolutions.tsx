@@ -1,4 +1,4 @@
-import { ScanSearch, LayoutGrid, FileCheck, Activity, ArrowRight, Braces, HardDrive, Globe, KeyRound } from "lucide-react";
+import { ScanSearch, FileCheck, Activity, ArrowRight, Braces, HardDrive, Globe, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const cards = [
@@ -7,28 +7,18 @@ const cards = [
     title: "AI Destekli Tarama",
     desc: "Yapay zeka motorumuz sitenizi otomatik tarar, WCAG eksikliklerini tespit eder ve anında düzeltir.",
     highlight: "Otomatik düzeltme",
-    span: "lg:col-span-2",
-  },
-  {
-    icon: LayoutGrid,
-    title: "58+ Erişilebilirlik Özelliği",
-    desc: "7 kategoride 58'den fazla özellik: metin, renk, okuma, navigasyon, içerik, profiller ve gelişmiş araçlar.",
-    highlight: "6 hazır profil",
-    span: "",
   },
   {
     icon: FileCheck,
     title: "Uyumluluk Sertifikası",
     desc: "WCAG 2.1, ADA, EN 301 549, EAA 2025 ve 5378 sayılı kanuna uyum sertifikanızı otomatik alın.",
     highlight: "Yasal koruma",
-    span: "",
   },
   {
     icon: Activity,
     title: "Gerçek Zamanlı İzleme",
     desc: "Özellik kullanım analitiği, oturum takibi, heartbeat monitoring ve event queue sistemi ile canlı raporlama.",
     highlight: "Canlı analytics",
-    span: "lg:col-span-2",
   },
 ];
 
@@ -41,7 +31,7 @@ const techSpecs = [
 
 const TechSolutions = () => {
   return (
-    <section className="py-28 bg-muted/30 relative">
+    <section className="py-16 sm:py-28 bg-muted/30 relative">
       <div className="container">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-14">
           <div className="max-w-xl">
@@ -64,15 +54,14 @@ const TechSolutions = () => {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+        <div className="grid md:grid-cols-3 gap-5 mb-10">
           {cards.map((card) => (
             <div
               key={card.title}
-              className={`group relative bg-card rounded-2xl p-7 border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(225,84%,55%,0.06)] overflow-hidden ${card.span}`}
+              className="group relative bg-card rounded-2xl p-8 border border-border/50 hover:border-primary/20 transition-all duration-300 hover:shadow-[0_12px_40px_hsla(225,84%,55%,0.08)] hover:-translate-y-1 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.02] to-indigo-500/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/10 to-indigo-500/10 flex items-center justify-center mb-5 group-hover:shadow-[0_4px_12px_hsla(225,84%,55%,0.12)] transition-shadow">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5">
                   <card.icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-lg font-bold text-foreground mb-2">{card.title}</h3>
@@ -85,7 +74,7 @@ const TechSolutions = () => {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
           {techSpecs.map((spec) => (
             <div key={spec.label} className="flex items-center gap-3 bg-card rounded-xl px-5 py-4 border border-border/50">
               <div className="w-9 h-9 rounded-lg bg-primary/5 flex items-center justify-center flex-shrink-0">

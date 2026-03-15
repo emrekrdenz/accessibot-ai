@@ -42,7 +42,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="py-28 bg-muted/30 relative">
+    <section className="py-16 sm:py-28 bg-muted/30 relative">
       <div className="container max-w-3xl">
         <div className="text-center mb-14">
           <div className="text-xs font-bold tracking-[2px] uppercase text-secondary mb-4">

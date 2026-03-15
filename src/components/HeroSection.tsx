@@ -7,8 +7,8 @@ const HeroSection = () => {
   const trustBadges = [
     { label: "WCAG 2.1", color: "bg-primary/10 text-primary border-primary/20" },
     { label: "ADA", color: "bg-secondary/10 text-secondary border-secondary/20" },
-    { label: "EAA 2025", color: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20" },
-    { label: "EN 301 549", color: "bg-teal-500/10 text-teal-600 border-teal-500/20" },
+    { label: "EAA 2025", color: "bg-primary/10 text-primary border-primary/20" },
+    { label: "EN 301 549", color: "bg-primary/10 text-primary border-primary/20" },
   ];
 
   const microTrust = [
@@ -18,9 +18,9 @@ const HeroSection = () => {
   ];
 
   return (
-    <section id="home" className="relative gradient-hero overflow-hidden min-h-[85vh] flex items-center pt-28 pb-16">
-      <div className="container">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="home" className="relative gradient-hero overflow-hidden min-h-[70vh] lg:min-h-[85vh] flex items-center pt-24 pb-12 lg:pt-28 lg:pb-16">
+      <div className="container px-5 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left - Text */}
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full bg-secondary/5 border border-secondary/15">
@@ -28,13 +28,13 @@ const HeroSection = () => {
               <span className="text-sm font-semibold text-secondary">EAA 2025 yürürlüğe giriyor — hazır mısınız?</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-[3.2rem] font-extrabold text-foreground leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] font-extrabold text-foreground leading-tight mb-5 sm:mb-6">
               Web Sitenizi 5 Dakikada{" "}
               <span className="text-gradient">WCAG 2.1 Uyumlu</span>{" "}
               Hale Getirin
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8 max-w-lg leading-relaxed">
               İKE, 58+ erişilebilirlik özelliği ve 6 hazır profil ile web sitenizi WCAG 2.1, ADA, EAA 2025 ve EN 301 549 standartlarına uyumlu hale getirir. Shadow DOM izolasyonu ile tek satır kodla başlayın.
             </p>
 
